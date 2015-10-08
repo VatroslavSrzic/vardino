@@ -1,3 +1,4 @@
 # vardino
-My Arduino playground
+My Arduino playground.
+
 Do not expect to find anything very useful here :-)
