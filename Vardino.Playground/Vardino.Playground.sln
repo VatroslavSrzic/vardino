@@ -5,6 +5,14 @@ VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BlinkLedExample", "BlinkLedExample\BlinkLedExample.vcxproj", "{D9AEDB49-6AE3-4D37-A00E-2574444AD800}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LineTrackBasics", "LineTrackBasics\LineTrackBasics.vcxproj", "{C5F80730-F44F-4478-BDAE-6634EFC2CA88}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AvoidBasics", "AvoidBasics\AvoidBasics.vcxproj", "{50FD3502-AF25-45EB-8B7A-1AA7047684FA}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UltrasonicDistanceMeterBasics", "UltrasonicDistanceMeterBasics\UltrasonicDistanceMeterBasics.vcxproj", "{5A3B163B-FF66-48A7-9846-330AAB1A27AA}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "StopProcessing", "StopProcessing\StopProcessing.vcxproj", "{3C0D314B-8DBD-4A5F-BCFB-F60CA9EEEE20}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -15,6 +23,22 @@ Global
 		{D9AEDB49-6AE3-4D37-A00E-2574444AD800}.Debug|x86.Build.0 = Debug|Win32
 		{D9AEDB49-6AE3-4D37-A00E-2574444AD800}.Release|x86.ActiveCfg = Release|Win32
 		{D9AEDB49-6AE3-4D37-A00E-2574444AD800}.Release|x86.Build.0 = Release|Win32
+		{C5F80730-F44F-4478-BDAE-6634EFC2CA88}.Debug|x86.ActiveCfg = Debug|Win32
+		{C5F80730-F44F-4478-BDAE-6634EFC2CA88}.Debug|x86.Build.0 = Debug|Win32
+		{C5F80730-F44F-4478-BDAE-6634EFC2CA88}.Release|x86.ActiveCfg = Release|Win32
+		{C5F80730-F44F-4478-BDAE-6634EFC2CA88}.Release|x86.Build.0 = Release|Win32
+		{50FD3502-AF25-45EB-8B7A-1AA7047684FA}.Debug|x86.ActiveCfg = Debug|Win32
+		{50FD3502-AF25-45EB-8B7A-1AA7047684FA}.Debug|x86.Build.0 = Debug|Win32
+		{50FD3502-AF25-45EB-8B7A-1AA7047684FA}.Release|x86.ActiveCfg = Release|Win32
+		{50FD3502-AF25-45EB-8B7A-1AA7047684FA}.Release|x86.Build.0 = Release|Win32
+		{5A3B163B-FF66-48A7-9846-330AAB1A27AA}.Debug|x86.ActiveCfg = Debug|Win32
+		{5A3B163B-FF66-48A7-9846-330AAB1A27AA}.Debug|x86.Build.0 = Debug|Win32
+		{5A3B163B-FF66-48A7-9846-330AAB1A27AA}.Release|x86.ActiveCfg = Release|Win32
+		{5A3B163B-FF66-48A7-9846-330AAB1A27AA}.Release|x86.Build.0 = Release|Win32
+		{3C0D314B-8DBD-4A5F-BCFB-F60CA9EEEE20}.Debug|x86.ActiveCfg = Debug|Win32
+		{3C0D314B-8DBD-4A5F-BCFB-F60CA9EEEE20}.Debug|x86.Build.0 = Debug|Win32
+		{3C0D314B-8DBD-4A5F-BCFB-F60CA9EEEE20}.Release|x86.ActiveCfg = Release|Win32
+		{3C0D314B-8DBD-4A5F-BCFB-F60CA9EEEE20}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
