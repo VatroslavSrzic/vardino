@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BlinkLedExample", "BlinkLedExample\BlinkLedExample.vcxproj", "{D9AEDB49-6AE3-4D37-A00E-2574444AD800}"
 EndProject
@@ -12,6 +12,8 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UltrasonicDistanceMeterBasics", "UltrasonicDistanceMeterBasics\UltrasonicDistanceMeterBasics.vcxproj", "{5A3B163B-FF66-48A7-9846-330AAB1A27AA}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "StopProcessing", "StopProcessing\StopProcessing.vcxproj", "{3C0D314B-8DBD-4A5F-BCFB-F60CA9EEEE20}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ServoBasics", "ServoBasics\ServoBasics.vcxproj", "{A14D228A-8ECB-49CF-A9C1-74908F7884B3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{3C0D314B-8DBD-4A5F-BCFB-F60CA9EEEE20}.Debug|x86.Build.0 = Debug|Win32
 		{3C0D314B-8DBD-4A5F-BCFB-F60CA9EEEE20}.Release|x86.ActiveCfg = Release|Win32
 		{3C0D314B-8DBD-4A5F-BCFB-F60CA9EEEE20}.Release|x86.Build.0 = Release|Win32
+		{A14D228A-8ECB-49CF-A9C1-74908F7884B3}.Debug|x86.ActiveCfg = Debug|Win32
+		{A14D228A-8ECB-49CF-A9C1-74908F7884B3}.Debug|x86.Build.0 = Debug|Win32
+		{A14D228A-8ECB-49CF-A9C1-74908F7884B3}.Release|x86.ActiveCfg = Release|Win32
+		{A14D228A-8ECB-49CF-A9C1-74908F7884B3}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
