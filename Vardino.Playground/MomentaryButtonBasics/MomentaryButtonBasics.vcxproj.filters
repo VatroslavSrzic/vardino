@@ -15,14 +15,11 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="__vm\.PhotoResistorBasics.vsarduino.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="__vm\.LaserBarierBasics.vsarduino.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
+    <None Include="MomentaryButtonBasics.ino" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="LaserBarierBasics.ino" />
+    <ClInclude Include="__vm\.MomentaryButtonBasics.vsarduino.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

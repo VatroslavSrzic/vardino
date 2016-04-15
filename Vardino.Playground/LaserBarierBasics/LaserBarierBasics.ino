@@ -3,12 +3,12 @@
   http://linksprite.com/wiki/index.php5?title=Advanced_Sensors_Kit_for_Arduino
   
             | A1  -------signal--------S |  
-  Arduino   | GND ---------------------  |  Photoresistor
-            | 5V  ---------------------  |  
+  Arduino   | 5V  ---------------------  |  Photoresistor
+            | GND ---------------------  |  
   
             | DD4 ---------------------S |
-  Arduino   | GND ---------------------  |  Laser
-            | 5V  ---------------------  |
+  Arduino   | 5V  ---------------------  |  Laser
+            | GND ---------------------  |
 
   13.04.2016
   by Vatroslav Srziæ
