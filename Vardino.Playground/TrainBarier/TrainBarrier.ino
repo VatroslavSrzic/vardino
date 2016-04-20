@@ -1,5 +1,5 @@
 //INCLUDES
-#include "src/_micro-api/libraries/OnOffButtonSupport/src/OnOffButton.h"
+#include "ButtonOnOff.h"
 
 /*
   Train barrier
@@ -8,7 +8,7 @@
   by Vatroslav Srziæ
  */
 
-OnOffButton BtnOnOff(3);
+ButtonOnOffClass BtnOnOff(3);
 
 // the setup function runs once when you press reset or power the board
 void setup()

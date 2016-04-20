@@ -1,13 +1,10 @@
-/*
-Name:		OnOffButton.cpp
-Created:	4/19/2016 10:36:17 PM
-Author:	Vatro
-Editor:	http://www.visualmicro.com
-*/
+//
+//
+//
 
-#include "OnOffButton.h"
+#include "ButtonOnOff.h"
 
-OnOffButton::OnOffButton(int digitalPin)
+ButtonOnOffClass::ButtonOnOffClass(int digitalPin)
 {
 	if (digitalPin < 2 || digitalPin > 7)
 	{
@@ -20,39 +17,39 @@ OnOffButton::OnOffButton(int digitalPin)
 	}
 }
 
-bool OnOffButton::InError()
+bool ButtonOnOffClass::InError()
 {
 	return this->inError;
 }
 
-String OnOffButton::GetErrorText()
+String ButtonOnOffClass::GetErrorText()
 {
 	return this->errorText;
 }
 
-bool OnOffButton::IsOn()
+bool ButtonOnOffClass::IsOn()
 {
 	return this->GetOnOffState();
 }
 
-bool OnOffButton::IsOff()
+bool ButtonOnOffClass::IsOff()
 {
 	return !this->GetOnOffState();
 }
 
-void OnOffButton::ClearErrr()
+void ButtonOnOffClass::ClearErrr()
 {
 	this->errorText = "";
 	this->inError = false;
 }
 
-void OnOffButton::SetError(String errorText)
+void ButtonOnOffClass::SetError(String errorText)
 {
 	this->errorText = errorText;
 	this->inError = true;
 }
 
-bool OnOffButton::GetOnOffState()
+bool ButtonOnOffClass::GetOnOffState()
 {
 	int buttonState = 0;                // current state of the button
 	static int lastButtonState = 0;     // previous state of the button

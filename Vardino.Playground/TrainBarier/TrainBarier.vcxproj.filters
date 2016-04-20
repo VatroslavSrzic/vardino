@@ -21,12 +21,12 @@
     <ClInclude Include="__vm\.TrainBarier.vsarduino.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\_micro-api\libraries\OnOffButtonSupport\src\OnOffButton.h">
+    <ClInclude Include="ButtonOnOff.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\_micro-api\libraries\OnOffButtonSupport\src\OnOffButton.cpp">
+    <ClCompile Include="ButtonOnOff.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

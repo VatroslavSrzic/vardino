@@ -1,7 +1,7 @@
-// OnOffButton.h
+// ButtonOnOff.h
 
-#ifndef _ONOFFBUTTON_h
-#define _ONOFFBUTTON_h
+#ifndef _BUTTONONOFF_h
+#define _BUTTONONOFF_h
 
 #if defined(ARDUINO) && ARDUINO >= 100
 #include "arduino.h"
@@ -9,19 +9,10 @@
 #include "WProgram.h"
 #endif
 
-/*
-		| Dig3 -------signal--------S |
-Arduino	| 5V   ---------------------  |  Momentary Button
-		| GND  ---------------------  |
-
-20.04.2016
-by Vatroslav Srziæ
-*/
-
-class OnOffButton
+class ButtonOnOffClass
 {
 public:
-	OnOffButton(int buttonPort);
+	ButtonOnOffClass(int buttonPort);
 
 	bool InError();
 	String GetErrorText();
