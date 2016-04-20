@@ -1,4 +1,6 @@
 //INCLUDES
+#include "ErrorBase.h"
+#include "LaserBeam.h"
 #include "ButtonOnOff.h"
 
 /*

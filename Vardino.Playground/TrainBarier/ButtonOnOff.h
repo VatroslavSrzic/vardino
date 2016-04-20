@@ -9,13 +9,12 @@
 #include "WProgram.h"
 #endif
 
-class ButtonOnOffClass
+#include "ErrorBase.h"
+
+class ButtonOnOffClass : ErrorBaseClass
 {
 public:
-	ButtonOnOffClass(int buttonPort);
-
-	bool InError();
-	String GetErrorText();
+	ButtonOnOffClass(int buttonPin);
 
 	bool IsOn();
 	bool IsOff();
@@ -23,14 +22,7 @@ public:
 protected:
 	int digitalPin = -1;
 
-	void ClearErrr();
-
-	void SetError(String errorText);
-
 private:
-	bool inError = false;
-	String errorText = "";
-
 	bool GetOnOffState();
 };
 

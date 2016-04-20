@@ -3,28 +3,20 @@
 //
 
 #include "ButtonOnOff.h"
+#include "StringHelper.h"
 
 ButtonOnOffClass::ButtonOnOffClass(int digitalPin)
 {
 	if (digitalPin < 2 || digitalPin > 7)
 	{
-		this->SetError(((String)"Illegal pin value " + digitalPin) + " Only pins between 2 and 7 are allowed.");
+		this->SetError(StringHelper.GetIllegalDigitalPinValue(digitalPin, 2, 7));
+		return;
 	}
 	else
 	{
 		this->digitalPin = digitalPin;
 		pinMode(this->digitalPin, INPUT);
 	}
-}
-
-bool ButtonOnOffClass::InError()
-{
-	return this->inError;
-}
-
-String ButtonOnOffClass::GetErrorText()
-{
-	return this->errorText;
 }
 
 bool ButtonOnOffClass::IsOn()
@@ -35,18 +27,6 @@ bool ButtonOnOffClass::IsOn()
 bool ButtonOnOffClass::IsOff()
 {
 	return !this->GetOnOffState();
-}
-
-void ButtonOnOffClass::ClearErrr()
-{
-	this->errorText = "";
-	this->inError = false;
-}
-
-void ButtonOnOffClass::SetError(String errorText)
-{
-	this->errorText = errorText;
-	this->inError = true;
 }
 
 bool ButtonOnOffClass::GetOnOffState()
