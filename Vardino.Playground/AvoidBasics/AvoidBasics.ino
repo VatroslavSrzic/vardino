@@ -14,18 +14,18 @@
   by Vatroslav Srziæ
  */
 
-//GLOBALS
-int AvoidSensor = DD2;
+ //GLOBALS
+int AvoidSensor = 2;
 
 // the setup function runs once when you press reset or power the board
-void setup() 
+void setup()
 {
-    Serial.begin(9600);
+	Serial.begin(9600);
 }
 
 // the loop function runs over and over again forever
-void loop() 
+void loop()
 {
-    Serial.println(AvoidSensor); // print the data from the sensor
-    delay(25);
+	Serial.println(digitalRead(AvoidSensor)); // print the data from the sensor
+	delay(25);
 }

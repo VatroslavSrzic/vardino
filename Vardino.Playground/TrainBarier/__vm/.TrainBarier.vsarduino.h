@@ -71,6 +71,8 @@ extern "C" void __cxa_pure_virtual() {;}
 #include <ErrorBase.h>
 #include <LaserBeam.cpp>
 #include <LaserBeam.h>
+#include <ObstacleDetector.cpp>
+#include <ObstacleDetector.h>
 #include <StringHelper.cpp>
 #include <StringHelper.h>
 #endif

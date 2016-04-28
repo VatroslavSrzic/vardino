@@ -33,6 +33,9 @@
     <ClInclude Include="StringHelper.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="ObstacleDetector.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ButtonOnOff.cpp">
@@ -45,6 +48,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="StringHelper.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ObstacleDetector.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

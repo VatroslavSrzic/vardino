@@ -79,6 +79,7 @@
     <ClInclude Include="ButtonOnOff.h" />
     <ClInclude Include="ErrorBase.h" />
     <ClInclude Include="LaserBeam.h" />
+    <ClInclude Include="ObstacleDetector.h" />
     <ClInclude Include="StringHelper.h" />
     <ClInclude Include="__vm\.TrainBarier.vsarduino.h" />
   </ItemGroup>
@@ -86,6 +87,7 @@
     <ClCompile Include="ButtonOnOff.cpp" />
     <ClCompile Include="ErrorBase.cpp" />
     <ClCompile Include="LaserBeam.cpp" />
+    <ClCompile Include="ObstacleDetector.cpp" />
     <ClCompile Include="StringHelper.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

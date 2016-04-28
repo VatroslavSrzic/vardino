@@ -2,6 +2,7 @@
 #include "ErrorBase.h"
 #include "LaserBeam.h"
 #include "ButtonOnOff.h"
+#include "ObstacleDetector.h"
 
 /*
   Train barrier
@@ -12,6 +13,7 @@
 
 ButtonOnOffClass BtnOnOff(3);
 LaserBeamClass LaserBeam(A1, 4);
+ObstacleDetectorClass ObstacleDetector(2);
 
 void ProcessFatalError(const char * mainErrorMessage, ErrorBaseClass &errorObject)
 {
@@ -32,15 +34,7 @@ void setup()
 {
 	Serial.begin(9600);
 
-	if (BtnOnOff.InError())
-	{
-		ProcessFatalError("ON/OFF button is misconfigured: ", BtnOnOff);
-	}
-
-	if (LaserBeam.InError())
-	{
-		ProcessFatalError("Laser barrier is misconfigured: ", LaserBeam);
-	}
+	CheckConfiguration();
 
 	{	// Set up laser beam or exit if failed
 		//
@@ -58,14 +52,32 @@ void setup()
 // the loop function runs over and over again forever
 void loop()
 {
-	if (LaserBeam.IsCuttOff())
+	if (ObstacleDetector.ObstacleDetected())
 	{
-		Serial.println("cut off");
+		Serial.println("obstacle");
 	}
 	else
 	{
-		Serial.println("not cut off");
+		Serial.println("clear");
 	}
 
-	delay(500);
+	delay(200);
+}
+
+void CheckConfiguration()
+{
+	if (BtnOnOff.InError())
+	{
+		ProcessFatalError("ON/OFF button is misconfigured: ", BtnOnOff);
+	}
+
+	if (LaserBeam.InError())
+	{
+		ProcessFatalError("Laser barrier is misconfigured: ", LaserBeam);
+	}
+
+	if (ObstacleDetector.InError())
+	{
+		ProcessFatalError("Obstacle Detector is misconfigured: ", ObstacleDetector);
+	}
 }
