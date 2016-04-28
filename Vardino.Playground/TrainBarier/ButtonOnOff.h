@@ -11,7 +11,7 @@
 
 #include "ErrorBase.h"
 
-class ButtonOnOffClass : ErrorBaseClass
+class ButtonOnOffClass : public ErrorBaseClass
 {
 public:
 	ButtonOnOffClass(int buttonPin);

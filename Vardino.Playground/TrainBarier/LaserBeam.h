@@ -24,12 +24,12 @@
   by Vatroslav Srziæ
 */
 
-class LaserBeamClass : ErrorBaseClass
+class LaserBeamClass : public ErrorBaseClass
 {
 public:
 	LaserBeamClass(int photoresistorPin, int laserPin);
 
-	bool Calibrate(bool stayOn = true);
+	void Calibrate(bool stayOn = true);
 
 	bool IsCalibrated();
 
@@ -39,6 +39,8 @@ public:
 
 	bool Stop();
 
+	bool IsCuttOff();
+
 protected:
 	int photoresistorPin = -1;
 	int laserPin = -1;
@@ -46,7 +48,15 @@ protected:
 	bool isCalibrated = false;
 	bool isRunning = false;
 
+	int highestResistanceWhenOn = -1;
+	int lowestResistanceWhenOff = -1;
+
 private:
+	bool laserIsOn = false;
+
+	void TurnLaserOn();
+	void TurnLaserOff();
+	int GetResistanceReading();
 };
 
 #endif

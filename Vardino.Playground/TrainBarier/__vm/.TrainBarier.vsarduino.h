@@ -71,5 +71,6 @@ extern "C" void __cxa_pure_virtual() {;}
 #include <..\TrainBarier\ErrorBase.h>
 #include <..\TrainBarier\LaserBeam.cpp>
 #include <..\TrainBarier\LaserBeam.h>
+#include <..\TrainBarier\StringHelper.cpp>
 #include <..\TrainBarier\StringHelper.h>
 #endif
