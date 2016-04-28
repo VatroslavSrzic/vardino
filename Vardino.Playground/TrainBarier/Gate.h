@@ -9,8 +9,8 @@
 #include "WProgram.h"
 #endif
 
-#include "Servo\src\Servo.h"
 #include "ErrorBase.h"
+#include <Servo.h>
 
 class GateClass : public ErrorBaseClass
 {

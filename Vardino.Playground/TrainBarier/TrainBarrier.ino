@@ -1,12 +1,12 @@
 //INCLUDES
+#include <Servo.h>
+
 #include "Gate.h"
 #include "ErrorBase.h"
 #include "LaserBeam.h"
 #include "ButtonOnOff.h"
 #include "ObstacleDetector.h"
 #include "BarrierState.h"
-#include "Gate.h"
-
 /*
   Train barrier
 
