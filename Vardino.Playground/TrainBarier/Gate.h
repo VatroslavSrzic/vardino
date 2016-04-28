@@ -20,8 +20,12 @@ public:
 	void Open();
 	void Close();
 
+	void Init();
+
 	bool IsOpen();
 	bool IsClose();
+
+	bool IsInitialized();
 
 protected:
 	int servoMinPulseWidth = -1;
@@ -34,6 +38,7 @@ protected:
 	void Detach();
 
 private:
+	bool isInitialized = false;
 };
 
 #endif

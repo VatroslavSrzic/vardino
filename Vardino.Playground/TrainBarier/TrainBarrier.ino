@@ -56,6 +56,18 @@ void setup()
 		}
 		Serial.println("... ... leaser beam calibrated");
 	}
+
+	{	// Initialize gate or exit if failed
+		//
+		Serial.println("Initializing gate...");
+
+		Gate.Init();
+		if (Gate.InError())
+		{
+			ProcessFatalError("Error during gate initialization: ", Gate);
+		}
+		Serial.println("... ... gate initialized");
+	}
 }
 
 // the loop function runs over and over again forever
@@ -69,16 +81,22 @@ void loop()
 	switch (CurrentState)
 	{
 	case Off:
-		//nothing
+		if (BtnOnOff.IsOn())
+		{
+			Transition_From_Off_to_On();
+		}
 		break;
 
 	case OnAndClosed:
+		if (BtnOnOff.IsOff())
+		{
+			Transition_From_On_to_Off();
+		}
+
 		mustOpen = (ObstacleDetector.ObstacleDetected() || LaserBeam.IsCuttOff());
 		if (mustOpen)
 		{
-			//open the gate
-
-			CurrentState = OnAndOpen;
+			Transition_From_OnAndClosed_to_OnAndOpen();
 		}
 		break;
 
@@ -86,9 +104,7 @@ void loop()
 		shouldClose = (!ObstacleDetector.ObstacleDetected() && !LaserBeam.IsCuttOff());
 		if (shouldClose)
 		{
-			//close the gate
-
-			CurrentState = OnAndClosed;
+			Transition_From_OnAndOpen_to_OnAndClosed();
 		}
 		break;
 
@@ -101,6 +117,46 @@ void loop()
 
 	delay(50);
 }
+
+/* begin of transitions */
+
+void Transition_From_Off_to_On()
+{
+	bool mustBeOpen = (ObstacleDetector.ObstacleDetected() || LaserBeam.IsCuttOff());
+
+	if (mustBeOpen)
+	{
+		Gate.Open();
+		CurrentState = OnAndOpen;
+	}
+	else
+	{
+		Gate.Close();
+		CurrentState = OnAndClosed;
+	}
+}
+
+void Transition_From_OnAndClosed_to_OnAndOpen()
+{
+	Gate.Open();
+
+	CurrentState = OnAndOpen;
+}
+
+void Transition_From_OnAndOpen_to_OnAndClosed()
+{
+	Gate.Close();
+
+	CurrentState = OnAndClosed;
+}
+
+void Transition_From_On_to_Off()
+{
+	Gate.Open();
+	CurrentState = Off;
+}
+
+/* end of transitions */
 
 void FastExitIfInError()
 {

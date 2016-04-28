@@ -37,18 +37,34 @@ GateClass::GateClass(int servoPin, int servoMinPulseWidth, int servoMaxPulseWidt
 	{
 		this->servoMaxPulseWidth = servoMaxPulseWidth;
 	}
-
-	Attach();
 }
 
 void GateClass::Open()
 {
+	if (!this->isInitialized)
+	{
+		this->SetError("Gate is not initialized");
+		return;
+	}
+
 	servo.write(90);
 }
 
 void GateClass::Close()
 {
+	if (!this->isInitialized)
+	{
+		this->SetError("Gate is not initialized");
+		return;
+	}
+
 	servo.write(0);
+}
+
+void GateClass::Init()
+{
+	Attach();
+	this->isInitialized = true;
 }
 
 bool GateClass::IsOpen()
@@ -59,6 +75,11 @@ bool GateClass::IsOpen()
 bool GateClass::IsClose()
 {
 	return servo.read() == 0;
+}
+
+bool GateClass::IsInitialized()
+{
+	return this->isInitialized;
 }
 
 void GateClass::Attach()
