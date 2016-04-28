@@ -16,4 +16,10 @@ String StringHelperClass::GetIllegalAnalogPinValue(int illegalValue, int legalMi
 		this->Error_IllegalPinValue4 + legalMin + this->Error_IllegalPinValue5 + legalMax + this->Error_IllegalPinValue6;
 }
 
+String StringHelperClass::GetIllegalIntRange(int illegalValue, int legalMin, int legalMax)
+{
+	return String() + "Illegal integer value '" + illegalValue + "'. The value must be in the range of "
+		+ legalMin + " and " + legalMax + ".";
+}
+
 StringHelperClass StringHelper;

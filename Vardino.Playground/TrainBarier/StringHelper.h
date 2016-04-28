@@ -12,6 +12,8 @@ public:
 
 	String GetIllegalAnalogPinValue(int illegalValue, int legalMin, int legalMax);
 
+	String GetIllegalIntRange(int illegalValue, int legalMin, int legalMax);
+
 private:
 	char* Error_IllegalPinValue1 = "Illegal pin value ";
 
