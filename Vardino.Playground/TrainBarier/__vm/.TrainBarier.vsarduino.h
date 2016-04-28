@@ -64,13 +64,13 @@ extern "C" void __cxa_pure_virtual() {;}
 #define portOutputRegister(P)
 #define portInputRegister(P)
 #define portModeRegister(P)
-#include <..\TrainBarier\TrainBarrier.ino>
-#include <..\TrainBarier\ButtonOnOff.cpp>
-#include <..\TrainBarier\ButtonOnOff.h>
-#include <..\TrainBarier\ErrorBase.cpp>
-#include <..\TrainBarier\ErrorBase.h>
-#include <..\TrainBarier\LaserBeam.cpp>
-#include <..\TrainBarier\LaserBeam.h>
-#include <..\TrainBarier\StringHelper.cpp>
-#include <..\TrainBarier\StringHelper.h>
+#include <TrainBarrier.ino>
+#include <ButtonOnOff.cpp>
+#include <ButtonOnOff.h>
+#include <ErrorBase.cpp>
+#include <ErrorBase.h>
+#include <LaserBeam.cpp>
+#include <LaserBeam.h>
+#include <StringHelper.cpp>
+#include <StringHelper.h>
 #endif
