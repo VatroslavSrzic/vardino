@@ -21,7 +21,7 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MomentaryButtonBasics", "Mo
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Basics", "Basics", "{3CA8F257-EF1D-4883-91D4-FA96390E53EE}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TrainBarier", "TrainBarier", "{074FEEAF-0F52-46F0-9FDD-AB62579B2EBB}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TrainBarrier", "TrainBarrier", "{074FEEAF-0F52-46F0-9FDD-AB62579B2EBB}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TrainBarrier", "TrainBarier\TrainBarier.vcxproj", "{D008665A-AC3C-42D2-A6BD-6272C9A7D5D3}"
 EndProject
