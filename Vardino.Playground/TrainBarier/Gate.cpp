@@ -2,11 +2,11 @@
 //
 //
 
+#include <Servo.h>
 #include "Gate.h"
 #include "StringHelper.h"
-#include "Servo\src\Servo.h"
 
-GateClass::GateClass(int servoPin, int servoMinPulseWidth, int servoMaxPulseWidth)
+GateClass::GateClass(int servoPin, int servoMinPulseWidth, int servoMaxPulseWidth, int closeDeg, int openDeg)
 {
 	if (servoPin > A7 || servoPin < A0)
 	{
@@ -37,6 +37,26 @@ GateClass::GateClass(int servoPin, int servoMinPulseWidth, int servoMaxPulseWidt
 	{
 		this->servoMaxPulseWidth = servoMaxPulseWidth;
 	}
+
+	if (closeDeg <= 0 || closeDeg > 180)
+	{
+		this->SetError(StringHelper.GetIllegalIntRange(closeDeg, 0, 180));
+		return;
+	}
+	else
+	{
+		this->closeDeg = closeDeg;
+	}
+
+	if (openDeg <= 0 || openDeg > 180)
+	{
+		this->SetError(StringHelper.GetIllegalIntRange(openDeg, 0, 180));
+		return;
+	}
+	else
+	{
+		this->openDeg = openDeg;
+	}
 }
 
 void GateClass::Open()
@@ -47,7 +67,7 @@ void GateClass::Open()
 		return;
 	}
 
-	servo.write(90);
+	servo.write(openDeg);
 }
 
 void GateClass::Close()
@@ -58,7 +78,7 @@ void GateClass::Close()
 		return;
 	}
 
-	servo.write(0);
+	servo.write(closeDeg);
 }
 
 void GateClass::Init()
@@ -69,12 +89,12 @@ void GateClass::Init()
 
 bool GateClass::IsOpen()
 {
-	return servo.read() == 90;
+	return servo.read() == openDeg;
 }
 
 bool GateClass::IsClose()
 {
-	return servo.read() == 0;
+	return servo.read() == closeDeg;
 }
 
 bool GateClass::IsInitialized()
@@ -85,50 +105,55 @@ bool GateClass::IsInitialized()
 void GateClass::Attach()
 {
 	this->servo.attach(servoControlPin, this->servoMinPulseWidth, this->servoMaxPulseWidth);
-	for (size_t ms = this->servoMinPulseWidth; ms < this->servoMaxPulseWidth; ms = ms + 5)
-	{
-		this->servo.writeMicroseconds(ms);
-		delay(8);
-	}
 
-	delay(1000);
+	// Turns out that this cute initialization procedure can do a lot of damage if there is no
+	// room for the gate to move in that way.
+	//for (size_t ms = this->servoMinPulseWidth; ms < this->servoMaxPulseWidth; ms = ms + 5)
+	//{
+	//	this->servo.writeMicroseconds(ms);
+	//	delay(8);
+	//}
+	//
+	//delay(1000);
+	//
+	//for (size_t ms = this->servoMaxPulseWidth; ms > this->servoMinPulseWidth; ms = ms - 10)
+	//{
+	//	this->servo.writeMicroseconds(ms);
+	//	delay(10);
+	//}
 
-	for (size_t ms = this->servoMaxPulseWidth; ms > this->servoMinPulseWidth; ms = ms - 10)
-	{
-		this->servo.writeMicroseconds(ms);
-		delay(10);
-	}
-
-	this->servo.write(0);
+	this->servo.write(closeDeg);
 }
 
 void GateClass::Detach()
 {
-	int firstThird = (this->servoMaxPulseWidth + this->servoMinPulseWidth) / 3;
-	int secondThird = 2 * firstThird;
+	// Turns out that this cute de-initialization procedure can do a lot of damage if there is
+	// no room for the gate to move in that way.
+	//int firstThird = (this->servoMaxPulseWidth + this->servoMinPulseWidth) / 3;
+	//int secondThird = 2 * firstThird;
+	//
+	//for (size_t ms = this->servoMinPulseWidth; ms < firstThird; ms = ms + 20)
+	//{
+	//	this->servo.writeMicroseconds(ms);
+	//	delay(15);
+	//}
+	//
+	//delay(500);
+	//
+	//for (size_t ms = firstThird; ms < secondThird; ms = ms + 30)
+	//{
+	//	this->servo.writeMicroseconds(ms);
+	//	delay(15);
+	//}
+	//
+	//delay(750);
+	//
+	//for (size_t ms = secondThird; ms > this->servoMinPulseWidth; ms = ms - 40)
+	//{
+	//	this->servo.writeMicroseconds(ms);
+	//	delay(10);
+	//}
 
-	for (size_t ms = this->servoMinPulseWidth; ms < firstThird; ms = ms + 20)
-	{
-		this->servo.writeMicroseconds(ms);
-		delay(15);
-	}
-
-	delay(500);
-
-	for (size_t ms = firstThird; ms < secondThird; ms = ms + 30)
-	{
-		this->servo.writeMicroseconds(ms);
-		delay(15);
-	}
-
-	delay(750);
-
-	for (size_t ms = secondThird; ms > this->servoMinPulseWidth; ms = ms - 40)
-	{
-		this->servo.writeMicroseconds(ms);
-		delay(10);
-	}
-
-	this->servo.write(90);
+	this->servo.write(openDeg);
 	this->servo.detach();
 }

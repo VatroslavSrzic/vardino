@@ -9,13 +9,13 @@
 #include "WProgram.h"
 #endif
 
-#include "ErrorBase.h"
 #include <Servo.h>
+#include "ErrorBase.h"
 
 class GateClass : public ErrorBaseClass
 {
 public:
-	GateClass(int servoPin, int servoMinPulseWidth = 572, int servoMaxPulseWidth = 2278);
+	GateClass(int servoPin, int servoMinPulseWidth = 572, int servoMaxPulseWidth = 2278, int closeDeg = 83, int openDeg = 170);
 
 	void Open();
 	void Close();
@@ -30,6 +30,9 @@ public:
 protected:
 	int servoMinPulseWidth = -1;
 	int servoMaxPulseWidth = -1;
+
+	int closeDeg = -1;
+	int openDeg = -1;
 
 	Servo servo;
 	int servoControlPin = -1;

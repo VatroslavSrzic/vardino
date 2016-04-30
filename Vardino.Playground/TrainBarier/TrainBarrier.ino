@@ -16,7 +16,7 @@
 
 BarrierState CurrentState = Unknown;
 
-GateClass Gate(A0);
+GateClass Gate(A0, 572, 2278, 93, 170);
 ButtonOnOffClass BtnOnOff(3);
 LaserBeamClass LaserBeam(A1, 4);
 ObstacleDetectorClass ObstacleDetector(2);
@@ -33,7 +33,7 @@ void ProcessFatalError(const char * mainErrorMessage, ErrorBaseClass &errorObjec
 	CurrentState = InError;
 
 	// so that errors can be printed out
-	delay(200);
+	delay(500);
 }
 
 // the setup function runs once when you press reset or power the board
@@ -68,6 +68,8 @@ void setup()
 		}
 		Serial.println("... ... gate initialized");
 	}
+
+	CurrentState = Off;
 }
 
 // the loop function runs over and over again forever
@@ -111,6 +113,7 @@ void loop()
 	default:
 		Serial.print("Unsupported value of current state in the 'loop': ");
 		Serial.println(CurrentState);
+		delay(100);
 		CurrentState = InError;
 		break;
 	}
